@@ -1,0 +1,60 @@
+<!-- throws error message using nootstrap -->
+<%= form_for(post, url: url) do |f| %>
+  <% if post.errors.any? %>
+    <div id="error">
+      <h2><%= pluralize(post.errors.count, "error") %> There was a porblem saving the blog:</h2>
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-md-3">
+          <div class="card">
+            <div class="card-block">
+              <h4 class="card-title"> <%= yield(:page_title) %>  </h4>
+            </div>
+            <ul class="list-group ">
+              <li class="list">
+                <div class="field">
+                  <%= f.label :title %>
+                  <%= f.text_field :title %>
+                </div>
+              </li>
+              <li class="list">
+                  <div class="field">
+                    <%= f.label :article_pic_url %>
+                    <%= f.text_field :article_pic_url %>
+                  </div>
+              </li>
+              <li class="list">
+                  <div class="field">
+                    <%= f.label :description %>
+                    <%= f.text_area :description %>
+                  </div>
+              </li>
+              <li class="list">
+                   <div class="actions">
+                        <%= f.submit  "Save Post", class: 'btn btn-success btn-block' %>
+                      </div>
+                 </li>
+            </ul>
+        </div>
+        <!-- makes sure as as the post is is beign edited the show and back button appear -->
+        <%  if @post.persisted? %>  
+        <%= link_to 'Show', @post %>
+        <% end %>
+        <%= link_to 'Back', posts_path %>
+
+    </div>
+      <div class="col-md-10">
+        <div class="field">
+          <%= f.text_area :body %>
+        </div>
+      </div>>
+    </div>
+
+<% end %>

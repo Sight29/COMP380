@@ -1,0 +1,102 @@
+
+// styling for the posted article cards
+.posts.index {
+  .card {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #181818;
+    height: 400px;
+    margin-bottom: 20px;
+    background-color: white;
+    .card-upperpart {
+      height: 200px;
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+    .card-block {
+      padding: 10px;
+      .btn-read {
+        background-color: #3C1818;
+        font-weight: 300;
+        border-radius: 0;
+        color: black;
+        &:hover{
+          background-color: #1990BA; 
+        }
+      }
+      .card-title {
+        font-size: 2.3rem;
+        margin-bottom: 0.8rem;
+        a {
+            color: black;
+            text-decoration: none;  
+        }
+      }
+      .published-date {
+        font-size: 0.8rem;
+        color: #BFB71D;
+        font-weight: 300;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .card-text {
+        font-size: 0.9rem;
+        color: black;
+      }
+
+    }
+  }
+}
+
+.posts.edit, .posts.new {
+  .card {
+     .list-group {
+        padding: 10px;
+        border-right: 0px;
+        border-left: 0px;
+        input[type='text'], textarea{
+          font-size: 14px;
+
+        } 
+        textarea {
+          height: 100px;
+
+        }
+      
+      }
+
+  }
+}
+
+.posts.show{
+
+  .author-name{
+
+    background-color: #0dd8df;
+    padding: 10px  10px;
+    border: 1px solid #0dd8df;
+    border-radius: 2px;
+  }
+}
+
+
+@media screen and (min-width: 34em) {
+  .posts.index .card {
+    height: 440px;
+  }
+}
+
+
+@media screen and (min-width: 48em) {
+  .posts.index .card {
+    height: 420px;
+  }
+}
+
+
+@media screen and (min-width: 75em) {
+  .posts.index .card {
+    height: 415px;
+  }
+}
