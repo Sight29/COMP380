@@ -1,2 +1,1 @@
-# COMP380
-COMP380 project
+#380 rails blog project
